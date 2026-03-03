@@ -6,6 +6,14 @@ jupyter labextension disable "@jupyterlab/apputils-extension:announcements" || t
 # Enable widgets (already included in ipywidgets package)
 jupyter nbextension enable --py widgetsnbextension --sys-prefix || true
 
+# Configure chromedriver path for selenium (Notebook 04: Cyclone GIF export)
+export CHROMEDRIVER_PATH=$(which chromedriver || echo "")
+if [ -n "$CHROMEDRIVER_PATH" ]; then
+    echo "chromedriver found at: $CHROMEDRIVER_PATH"
+else
+    echo "Warning: chromedriver not found - GIF export in notebook 04 will be skipped"
+fi
+
 # Clean up to save space
 conda clean --all -f -y
 rm -rf /tmp/*

@@ -34,7 +34,12 @@ dependencies:
   # Utilities
   - pillow
   - python-dateutil
-  
+
+  # Browser automation (Notebook 04: Cyclone GIF export)
+  - selenium
+  - chromium
+  - chromedriver
+
   # pip-only packages
   - pip:
     - pymannkendall
