@@ -76,8 +76,8 @@ jobs:
           path: ./book/_build/html
 
   deploy:
-    # Only deploy on push to main or jupyterbook branch
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/jupyterbook')
+    # Deploy on push to master/jupyterbook branch, or manual trigger
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/jupyterbook'))
     needs: build
     environment:
       name: github-pages
