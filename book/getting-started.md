@@ -45,7 +45,7 @@ The Montandon STAC API requires authentication. You'll need a valid API token to
 
 1. **Visit the Authentication Portal**
    - Navigate to [https://goadmin-stage.ifrc.org/](https://goadmin-stage.ifrc.org/)
-   - Click "Sign In" and use your IFRC credentials
+   - Click "Sign In" and use your IFRC GO Platform credentials
 
 2. **Generate an API Token**
    - Once logged in, go to your account settings
