@@ -11,15 +11,17 @@ project:
     - IFRC
     - data analysis
     - visualization
+  # Launch button (rocket icon) — opens notebook in Binder in a new tab
+  binder:
+    url: https://mybinder.org
+    repo: IFRCGo/montandon-notebooks
+    ref: main
+  # In-page execution (Thebe) — run code cells directly on the page
   jupyter:
-    server:
-      enabled: true
-      url: https://mybinder.org
     binder:
       url: https://mybinder.org
       repo: IFRCGo/montandon-notebooks
       ref: main
-  thebe: true
   toc:
     - file: intro.md
     - file: getting-started.md
