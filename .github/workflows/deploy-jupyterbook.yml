@@ -64,6 +64,15 @@ jobs:
         run: |
           echo "Building JupyterBook with BASE_URL=${BASE_URL}"
           uv run myst build --html
+
+      - name: Inject direct Binder buttons on notebook pages
+        run: |
+          uv run python scripts/inject_binder_buttons.py \
+            --build-dir book/_build/html \
+            --binder-url https://mybinder.org \
+            --binder-repo IFRCGo/montandon-notebooks \
+            --binder-ref main
+        working-directory: .
         
       - name: List build output
         run: |
