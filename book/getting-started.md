@@ -6,7 +6,7 @@
 - Python 3.9+
 - Git
 - A modern web browser
-- An [IFRC GO Platform](https://goadmin-stage.ifrc.org/) account for API access
+- An [IFRC GO Platform](https://go.ifrc.org/) account for API access
 :::
 
 ---
@@ -46,7 +46,7 @@ You must have a valid token before any data can be retrieved.
 
 ### How to Get Your Token
 
-1. Navigate to [goadmin-stage.ifrc.org](https://goadmin-stage.ifrc.org/) and
+1. Navigate to [GO platform](https://go.ifrc.org/) and
    click **Sign In**.
 2. Go to **Account Settings** → **API Tokens**.
 3. Click **Generate New Token**, name it (e.g., *Montandon Cookbook*),
@@ -143,7 +143,7 @@ Run `uv sync` from the repository root to install all pinned dependencies.
 Your token may be missing, invalid, or expired.
 
 * Verify the variable is set: `echo $MONTANDON_API_TOKEN`
-* Re-generate a token at [goadmin-stage.ifrc.org](https://goadmin-stage.ifrc.org/)
+* Re-generate a token at [Go Platform](https://go.ifrc.org/)
 :::
 
 :::{dropdown} Folium maps not rendering in JupyterLab
