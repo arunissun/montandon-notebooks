@@ -51,6 +51,10 @@ coverage.xml
 # JupyterBook/MyST build artifacts
 book/_build/
 book/.jupyter_cache/
+_build/
+
+# Nano editor recovery files
+*.save
 
 # IPython
 profile_default/
