@@ -1,0 +1,305 @@
+/* ===========================================================================
+   Montandon Cookbook — IFRC-Branded Custom Theme Overrides
+   Applied via myst.yml → site.options.custom_css
+   =========================================================================== */
+
+/* ---------- IFRC Brand Palette ---------- */
+:root {
+  --ifrc-red:       #F5333F;
+  --ifrc-red-dark:  #D22730;
+  --ifrc-red-light: #FDECEE;
+  --ifrc-black:     #1A1A1A;
+  --ifrc-grey-dark: #4A4A4A;
+  --ifrc-grey:      #6D6E71;
+  --ifrc-grey-light:#E8E8E8;
+  --ifrc-white:     #FFFFFF;
+  --ifrc-blue:      #007CE0;
+  --ifrc-green:     #00A651;
+  --ifrc-orange:    #F59E0B;
+  --ifrc-teal:      #0D9488;
+}
+
+/* ---------- Typography ---------- */
+body,
+article.content {
+  font-family: 'Source Sans Pro', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--ifrc-black);
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-weight: 700;
+  color: var(--ifrc-black);
+}
+
+h1 { border-bottom: 3px solid var(--ifrc-red); padding-bottom: 0.35em; }
+h2 { border-bottom: 1px solid var(--ifrc-grey-light); padding-bottom: 0.25em; }
+
+/* ---------- Sidebar / Navigation ---------- */
+nav.bd-sidebar {
+  border-right: 2px solid var(--ifrc-red);
+}
+
+nav.bd-sidebar .nav-link.active,
+nav.bd-sidebar .nav-link:hover {
+  color: var(--ifrc-red) !important;
+  border-left: 3px solid var(--ifrc-red);
+}
+
+/* ---------- Admonitions (MyST directives) ---------- */
+.admonition.note {
+  border-left: 4px solid var(--ifrc-blue);
+  background-color: #f0f7ff;
+}
+
+.admonition.warning {
+  border-left: 4px solid var(--ifrc-orange);
+  background-color: #fffbeb;
+}
+
+.admonition.important,
+.admonition.tip {
+  border-left: 4px solid var(--ifrc-red);
+  background-color: var(--ifrc-red-light);
+}
+
+.admonition.seealso {
+  border-left: 4px solid var(--ifrc-teal);
+  background-color: #f0fdfa;
+}
+
+/* Recipe-style header for admonitions */
+.admonition > .admonition-title {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.85em;
+}
+
+/* ---------- Code Blocks ---------- */
+pre {
+  border-radius: 6px;
+  border: 1px solid var(--ifrc-grey-light);
+}
+
+code {
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  padding: 0.15em 0.35em;
+  font-size: 0.9em;
+}
+
+/* ---------- Tables ---------- */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0;
+}
+
+th {
+  background-color: var(--ifrc-red);
+  color: var(--ifrc-white);
+  font-weight: 600;
+  padding: 0.6em 1em;
+  text-align: left;
+}
+
+td {
+  padding: 0.5em 1em;
+  border-bottom: 1px solid var(--ifrc-grey-light);
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+tr:hover {
+  background-color: var(--ifrc-red-light);
+}
+
+/* ---------- Links ---------- */
+a {
+  color: var(--ifrc-red);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--ifrc-red-dark);
+  text-decoration: underline;
+}
+
+/* ---------- Header / Top-bar ---------- */
+.topbar,
+header.bd-header {
+  background-color: var(--ifrc-black) !important;
+  border-bottom: 3px solid var(--ifrc-red);
+}
+
+.topbar a,
+header.bd-header a {
+  color: var(--ifrc-white) !important;
+}
+
+/* ---------- Fluid navbar — scales continuously with viewport width ---------- */
+/*
+ * All navbar elements shrink proportionally using clamp() so there is
+ * never a hard snap or congestion. Works at any screen size without
+ * fixed breakpoints.
+ *
+ *   clamp(min, preferred, max)
+ *   preferred = viewport-relative expression (vw) so it always adapts.
+ */
+
+/* Nav link text (IFRC Website / GO Platform / Montandon EOAPI) */
+.navbar-nav .nav-link,
+.bd-header .navbar-nav .nav-link {
+  font-size:      clamp(0.62rem, 1vw, 0.9rem) !important;
+  padding-left:   clamp(0.15rem, 0.5vw, 0.6rem) !important;
+  padding-right:  clamp(0.15rem, 0.5vw, 0.6rem) !important;
+  white-space: nowrap;
+}
+
+/* Action buttons (Launch Binder / Open in Colab) */
+.navbar .btn,
+.navbar a.btn,
+.navbar [class*="btn-"],
+.bd-header .btn {
+  font-size:   clamp(0.62rem, 1vw, 0.85rem) !important;
+  padding:     clamp(0.15rem, 0.35vw, 0.35rem) clamp(0.3rem, 0.7vw, 0.7rem) !important;
+  white-space: nowrap !important;
+  line-height: 1.35 !important;
+}
+
+/* Search field — fluid width between 90 px and 220 px */
+.search-button-field,
+.navbar .search-button__wrapper,
+.bd-header .search-button__wrapper {
+  width: clamp(90px, 14vw, 220px) !important;
+  min-width: 0 !important;
+}
+
+/* Logo — shrink slightly on smaller viewports */
+.navbar-brand img,
+.bd-header .navbar-brand img {
+  height: clamp(24px, 3.5vw, 40px) !important;
+  width: auto !important;
+}
+
+/* ---------- Badges & Pills ---------- */
+.badge-recipe {
+  display: inline-block;
+  background: var(--ifrc-red);
+  color: var(--ifrc-white);
+  border-radius: 12px;
+  padding: 0.2em 0.7em;
+  font-size: 0.78em;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-right: 0.4em;
+}
+
+.badge-difficulty-beginner   { background: var(--ifrc-green); }
+.badge-difficulty-intermediate { background: var(--ifrc-orange); }
+.badge-difficulty-advanced   { background: var(--ifrc-red); }
+
+/* ---------- Dropdown / Collapse ---------- */
+details.dropdown {
+  border: 1px solid var(--ifrc-grey-light);
+  border-radius: 6px;
+  margin: 1em 0;
+}
+
+details.dropdown > summary {
+  background-color: #fafafa;
+  padding: 0.7em 1em;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+details.dropdown[open] > summary {
+  border-bottom: 1px solid var(--ifrc-grey-light);
+  border-radius: 6px 6px 0 0;
+}
+
+/* ---------- Tab Sets ---------- */
+.sphinx-tabs-tab {
+  font-weight: 600;
+}
+
+.sphinx-tabs-tab[aria-selected="true"] {
+  border-bottom: 2px solid var(--ifrc-red) !important;
+  color: var(--ifrc-red) !important;
+}
+
+/* ---------- Figures & Captions ---------- */
+figure {
+  margin: 2em 0;
+}
+
+figcaption {
+  font-size: 0.88em;
+  color: var(--ifrc-grey);
+  font-style: italic;
+  margin-top: 0.5em;
+}
+
+/* ---------- Notebook Output Cells ---------- */
+.cell_output {
+  border-left: 3px solid var(--ifrc-grey-light);
+  margin-left: 0.5em;
+  padding-left: 1em;
+}
+
+/* Cap long text/stream outputs at 300 px with a scrollbar */
+.cell_output pre {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+/* ---------- Collapsible Output Toggle (details.toggle-output) ---------- */
+/* Usage in a notebook: wrap a long output in a {dropdown} directive       */
+details.toggle-output {
+  border: 1px solid var(--ifrc-grey-light);
+  border-radius: 6px;
+  margin: 0.5em 0;
+}
+
+details.toggle-output > summary {
+  background: #f8f8f8;
+  padding: 0.4em 0.8em;
+  font-size: 0.82em;
+  color: var(--ifrc-grey-dark);
+  cursor: pointer;
+  border-radius: 6px;
+  list-style: none;
+  user-select: none;
+}
+
+details.toggle-output > summary::-webkit-details-marker { display: none; }
+details.toggle-output > summary::before { content: '\25B6\00A0 Show output'; }
+details.toggle-output[open] > summary { border-radius: 6px 6px 0 0; }
+details.toggle-output[open] > summary::before { content: '\25BC\00A0 Hide output'; }
+details.toggle-output[open] > summary {
+  border-bottom: 1px solid var(--ifrc-grey-light);
+}
+
+details.toggle-output .cell_output pre {
+  max-height: none;  /* full height inside an explicit toggle */
+}
+
+/* ---------- Footer ---------- */
+footer {
+  border-top: 2px solid var(--ifrc-red);
+}
+
+/* ---------- Print-Friendly ---------- */
+@media print {
+  nav.bd-sidebar,
+  header.bd-header,
+  .topbar { display: none; }
+  
+  h1 { border-bottom-color: #000; }
+}
