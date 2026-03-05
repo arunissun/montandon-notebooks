@@ -1,0 +1,152 @@
+% ===========================================================================
+% Montandon Notebooks — Master Bibliography
+% ===========================================================================
+% Add citations here and reference them in any notebook or MyST page with
+% {cite}`key` (inline) or ```{bibliography} :filter: docname in docnames```
+% ===========================================================================
+
+% --- Standards & Specifications -------------------------------------------
+
+@misc{stac_spec,
+  author       = {{Radiant Earth Foundation}},
+  title        = {{SpatioTemporal Asset Catalog (STAC) Specification}},
+  year         = {2024},
+  url          = {https://stacspec.org},
+  note         = {Version 1.0}
+}
+
+@misc{cql2_spec,
+  author       = {{Open Geospatial Consortium}},
+  title        = {{OGC API — Features — Part 3: Filtering (CQL2)}},
+  year         = {2023},
+  url          = {https://docs.ogc.org/is/21-065r2/21-065r2.html},
+  note         = {OGC Standard 21-065r2}
+}
+
+@misc{monty_extension,
+  author       = {{IFRC}},
+  title        = {{Monty STAC Extension Specification}},
+  year         = {2024},
+  url          = {https://ifrcgo.org/monty-stac-extension/},
+  note         = {Defines hazard codes, impact details, and correlation IDs}
+}
+
+% --- Data Sources ---------------------------------------------------------
+
+@misc{gdacs,
+  author       = {{European Commission Joint Research Centre}},
+  title        = {{Global Disaster Alert and Coordination System (GDACS)}},
+  year         = {2024},
+  url          = {https://www.gdacs.org}
+}
+
+@article{emdat,
+  author       = {Guha-Sapir, Debarati},
+  title        = {{EM-DAT: The Emergency Events Database}},
+  year         = {2024},
+  journal      = {Centre for Research on the Epidemiology of Disasters (CRED)},
+  publisher    = {Universit\'{e} catholique de Louvain},
+  url          = {https://www.emdat.be}
+}
+
+@misc{glide,
+  author       = {{Asian Disaster Reduction Center}},
+  title        = {{GLobal IDEntifier Number (GLIDE)}},
+  year         = {2024},
+  url          = {https://glidenumber.net}
+}
+
+@misc{usgs_earthquake,
+  author       = {{U.S. Geological Survey}},
+  title        = {{USGS Earthquake Hazards Program}},
+  year         = {2024},
+  url          = {https://earthquake.usgs.gov}
+}
+
+@misc{ibtracs,
+  author       = {Knapp, Kenneth R. and Kruk, Michael C. and Levinson, David H. and Diamond, Howard J. and Neumann, Charles J.},
+  title        = {{International Best Track Archive for Climate Stewardship (IBTrACS)}},
+  year         = {2024},
+  publisher    = {NOAA National Centers for Environmental Information},
+  url          = {https://www.ncei.noaa.gov/products/international-best-track-archive}
+}
+
+@misc{idmc,
+  author       = {{Internal Displacement Monitoring Centre}},
+  title        = {{IDMC Global Internal Displacement Database}},
+  year         = {2024},
+  url          = {https://www.internal-displacement.org}
+}
+
+@misc{pdc,
+  author       = {{Pacific Disaster Center}},
+  title        = {{PDC DisasterAWARE}},
+  year         = {2024},
+  url          = {https://www.pdc.org}
+}
+
+% --- Methodologies --------------------------------------------------------
+
+@article{mann_kendall,
+  author       = {Mann, Henry B.},
+  title        = {{Nonparametric Tests Against Trend}},
+  journal      = {Econometrica},
+  volume       = {13},
+  number       = {3},
+  pages        = {245--259},
+  year         = {1945},
+  doi          = {10.2307/1907187}
+}
+
+@article{stl_decomposition,
+  author       = {Cleveland, Robert B. and Cleveland, William S. and McRae, Jean E. and Terpenning, Irma},
+  title        = {{STL: A Seasonal-Trend Decomposition Procedure Based on Loess}},
+  journal      = {Journal of Official Statistics},
+  volume       = {6},
+  number       = {1},
+  pages        = {3--73},
+  year         = {1990}
+}
+
+@article{saffir_simpson,
+  author       = {Schott, Timothy and Landsea, Chris and Hafele, Gene and Lorens, Jeffrey and Taylor, Arthur and Thurm, Harvey and Ward, Bill and Willis, Mark and Zaleski, Walt},
+  title        = {{The Saffir-Simpson Hurricane Wind Scale}},
+  year         = {2012},
+  journal      = {National Hurricane Center, NOAA},
+  url          = {https://www.nhc.noaa.gov/aboutsshws.php}
+}
+
+@article{turkey_syria_2023,
+  author       = {Goldberg, Daniel E. and Taymaz, Tuncay and Reitman, Nadine G. and others},
+  title        = {{Rapid Characterization of the February 2023 Kahramanmara\c{s}, T\"{u}rkiye, Earthquake Sequence}},
+  journal      = {The Seismological Research Letters},
+  volume       = {94},
+  number       = {4},
+  pages        = {1474--1490},
+  year         = {2023},
+  doi          = {10.1785/0220230113}
+}
+
+% --- Software & Libraries ------------------------------------------------
+
+@software{pystac_client,
+  author       = {{Element 84}},
+  title        = {{pystac-client: Python client for searching STAC APIs}},
+  year         = {2024},
+  url          = {https://github.com/stac-utils/pystac-client}
+}
+
+@software{folium,
+  author       = {{python-visualization}},
+  title        = {{Folium: Python Data, Leaflet.js Maps}},
+  year         = {2024},
+  url          = {https://github.com/python-visualization/folium}
+}
+
+@software{pymannkendall,
+  author       = {Hussain, Md. Manjurul and Mahmud, Ishtiak},
+  title        = {{pyMannKendall: A Python Package for Non-parametric Mann-Kendall Family of Trend Tests}},
+  year         = {2019},
+  doi          = {10.21105/joss.01556},
+  url          = {https://github.com/mmhs013/pyMannKendall}
+}
