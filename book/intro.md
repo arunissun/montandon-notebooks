@@ -1,57 +1,126 @@
-# Montandon Data Fetching Examples
+﻿# Montandon Data Cookbook
 
-Welcome to **Montandon Data Fetching Examples** - a comprehensive collection of Jupyter notebooks demonstrating how to access, analyze, and visualize disaster data from the Montandon platform.
-
-:::{admonition} What is Montandon?
-:class: info
-Montandon is the IFRC's disaster data platform that provides standardized access to multiple disaster databases through a STAC (SpatioTemporal Asset Catalog) API. It aggregates data from sources like GDACS, EM-DAT, GLIDE, USGS, and more.
+:::{admonition} About This Cookbook
+:class: important
+A hands-on collection of **9 ready-to-run recipes** for querying, analysing, and
+visualising disaster data through the IFRC Montandon STAC API — from your first
+API call to animated cyclone-track maps and cascading-impact case studies.
 :::
-
-## About This Guide
-
-This interactive guide provides hands-on examples for:
-
-- 🌍 **Accessing global disaster data** through the Montandon STAC API
-- 📊 **Analyzing disaster impacts** across different regions and time periods  
-- 🗺️ **Visualizing events** with interactive maps and charts
-- 🔍 **Querying complex datasets** using advanced filtering techniques
-- 📈 **Time series analysis** of disaster trends and patterns
-
-## Quick Start
-
-To run these notebooks locally:
-
-1. **Get an API Token** from [https://goadmin-stage.ifrc.org/](https://goadmin-stage.ifrc.org/)
-2. **Clone the repository** and install dependencies
-3. **Set your token** as an environment variable
-4. **Launch Jupyter** and start exploring!
-
-For detailed setup instructions, see our [Getting Started Guide](getting-started).
-
-## Data Sources
-
-The Montandon platform aggregates data from:
-
-- **GDACS** - Global Disaster Alert and Coordination System
-- **EM-DAT** - Emergency Events Database
-- **GLIDE** - Global Identifier for disaster events
-- **USGS** - United States Geological Survey
-- **IDMC** - Internal Displacement Monitoring Centre
-- **IBTrACS** - International Best Track Archive for Climate Stewardship
-- **PDC** - Pacific Disaster Center
-- **IFRC** - International Federation of Red Cross and Red Crescent Societies
-
-## Support & Resources
-
-- 📖 [Montandon Documentation](https://montandon-docs.ifrc.org)
-- 💻 [GitHub Repository](https://github.com/IFRCGo/Montandon-Data-Fetching-Examples)
-- 🐛 [Report Issues](https://github.com/IFRCGo/Montandon-Data-Fetching-Examples/issues)
-- 📧 Contact: [montandon-support@ifrc.org](mailto:montandon-support@ifrc.org)
-
-## License
-
-These examples are provided under the MIT License. The data accessed through the Montandon API is subject to the respective data providers' licenses.
 
 ---
 
-*Start exploring disaster data with the power of Montandon!*
+## What Is Montandon?
+
+**Montandon** is the IFRC's disaster-data platform. It provides a single,
+standards-based [SpatioTemporal Asset Catalog (STAC)](https://stacspec.org)
+endpoint that aggregates records from multiple authoritative sources
+{cite}`stac_spec`.
+
+The platform organises every record into three linked item types:
+
+| Item Type | Description | Example Collections |
+|-----------|-------------|---------------------|
+| **Event** | A discrete disaster occurrence | `gdacs-events`, `emdat-events`, `glide-events` |
+| **Hazard** | Physical parameters of the event | `gdacs-hazards`, `usgs-hazards`, `ibtracs-hazards` |
+| **Impact** | Human, economic, and infrastructure consequences | `emdat-impacts`, `idmc-gidd-impacts` |
+
+Items sharing the same `monty:corr_id` (correlation&nbsp;ID) can be joined
+across types, enabling event → hazard → impact analysis in a single workflow.
+
+---
+
+## Cookbook at a Glance
+
+::::{grid} 2
+
+:::{grid-item-card} Part I — Foundations
+:link: notebooks/01_Getting_Started_Montandon_STAC_API.ipynb
+**Recipe 1** Connect, authenticate, and run your first STAC query.
+**Recipe 2** Master the Queryables schema and CQL2 filter language.
+:::
+
+:::{grid-item-card} Part II — Data Analysis
+:link: notebooks/02_Montandon_data_analysis.ipynb
+**Recipe 3** Multi-source hazard-code analysis with stacked charts.
+**Recipe 4** STL decomposition and Mann–Kendall trend tests.
+**Recipe 5** EM-DAT people-impact mining & natural-disaster filtering.
+:::
+
+:::{grid-item-card} Part III — Visualization
+:link: notebooks/04_Recent_Cyclone_Tracking.ipynb
+**Recipe 6** Animated cyclone tracking with Saffir–Simpson colouring.
+**Recipe 7** Global earthquake cluster maps with magnitude sizing.
+**Recipe 8** Cold-wave impact dashboards with Plotly.
+:::
+
+:::{grid-item-card} Part IV — Advanced
+:link: notebooks/07_cascading_impacts_analysis.ipynb
+**Recipe 9** Cascading-impact analysis: 2023 Türkiye–Syria earthquake,
+aftershocks, triggered landslides, and displacement data.
+:::
+::::
+
+---
+
+## Quick Start
+
+:::{tip}
+To run any recipe **without installing anything**, click the
+**Launch Binder** button at the top of each notebook page.
+:::
+
+For local development:
+
+```bash
+git clone https://github.com/IFRCGo/montandon-notebooks.git
+cd montandon-notebooks
+pip install uv && uv sync
+export MONTANDON_API_TOKEN='<your_token>'   # see Getting Started
+uv run jupyter lab
+```
+
+Detailed instructions are in [Getting Started](getting-started.md).
+
+---
+
+## Data Sources
+
+::::{tab-set}
+:::{tab-item} Events & Hazards
+- **GDACS** — Global Disaster Alert and Coordination System {cite}`gdacs`
+- **EM-DAT** — Emergency Events Database {cite}`emdat`
+- **GLIDE** — Global Identifier for disaster events {cite}`glide`
+- **USGS** — U.S. Geological Survey earthquake catalogue {cite}`usgs_earthquake`
+- **IBTrACS** — International Best Track Archive for Climate Stewardship {cite}`ibtracs`
+- **PDC** — Pacific Disaster Center {cite}`pdc`
+:::
+
+:::{tab-item} Impacts
+- **EM-DAT** — People, economic, and infrastructure impacts {cite}`emdat`
+- **IDMC** — Internal displacement data {cite}`idmc`
+- **IFRC** — Red Cross / Red Crescent field reports
+- **DesInventar** — National loss databases
+:::
+::::
+
+---
+
+## Support & Resources
+
+| Resource | Link |
+|----------|------|
+| Montandon Docs | <https://montandon-docs.ifrc.org> |
+| Repository | <https://github.com/IFRCGo/montandon-notebooks> |
+| Report Issues | <https://github.com/IFRCGo/montandon-notebooks/issues> |
+| Contact | [montandon-support@ifrc.org](mailto:montandon-support@ifrc.org) |
+
+## License
+
+These examples are provided under the **MIT License**. Data accessed through the
+Montandon API is subject to each provider's own licence terms.
+
+---
+
+```{bibliography}
+:filter: docname in docnames
+```
