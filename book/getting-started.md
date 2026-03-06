@@ -1,5 +1,4 @@
-﻿(getting-started)=
-# Getting Started
+﻿# Getting Started
 
 :::{admonition} Prerequisites
 :class: tip
