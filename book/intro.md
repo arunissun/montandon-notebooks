@@ -109,7 +109,7 @@ Detailed instructions are in [Getting Started](getting-started.md).
 
 | Resource | Link |
 |----------|------|
-| Montandon Extension Doc | <https://ifrcgo.org/monty-stac-extension/> |
+| Montandon STAC Extension Doc | <https://ifrcgo.org/monty-stac-extension/> |
 | Repository | <https://github.com/IFRCGo/montandon-notebooks> |
 | Contact | [im@ifrc.org](mailto:im@ifrc.org) |
 
