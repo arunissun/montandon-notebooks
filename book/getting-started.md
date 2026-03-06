@@ -1,4 +1,4 @@
-﻿# Getting Started
+# Getting Started
 
 :::{admonition} Prerequisites
 :class: tip
@@ -36,14 +36,14 @@ Once loaded, all dependencies are ready.
 
 ## Local Setup
 
-## Step 1: Obtain an API Token
+### Step 1: Obtain an API Token
 
 :::{important}
 The Montandon STAC API requires **Bearer Token** authentication.
 You must have a valid token before any data can be retrieved.
 :::
 
-### How to Get Your Token
+#### How to Get Your Token
 
 1. Navigate to [GO platform](https://go.ifrc.org/) and
    click **Sign In**.
@@ -57,9 +57,9 @@ Store it in an environment variable or a `.env` file that is listed in
 your `.gitignore`.
 :::
 
-## Step 2: Set Up Your Environment
+### Step 2: Set Up Your Environment
 
-### Clone and Install
+#### Clone and Install
 
 ```bash
 git clone https://github.com/IFRCGo/montandon-notebooks.git
@@ -68,7 +68,7 @@ pip install uv   # one-time setup
 uv sync          # resolves and installs all dependencies
 ```
 
-### Configure Your Token
+#### Configure Your Token
 
 ::::{tab-set}
 :::{tab-item} macOS/Linux
@@ -107,7 +107,7 @@ setx MONTANDON_API_TOKEN "your_token_here"
 :::
 ::::
 
-## Step 3: Launch Jupyter
+### Step 3: Launch Jupyter
 
 ```bash
 uv run jupyter lab
@@ -115,7 +115,7 @@ uv run jupyter lab
 
 Navigate to `book/notebooks/` and open any recipe.
 
-## Step 4: Verify Your Setup
+### Step 4: Verify Your Setup
 
 Open **Recipe 1** (`01_Getting_Started_Montandon_STAC_API.ipynb`) and execute
 the first three cells. You should see:
